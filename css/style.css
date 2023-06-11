@@ -159,13 +159,6 @@ footer .contacto-footer .contacto-titulo h3 {
 footer .contacto-footer .contacto-titulo ul li {
   list-style: none;
 }
-footer .contacto-footer .carrito-footer h3 {
-  font-size: 20px;
-}
-footer .contacto-footer .carrito-footer a {
-  text-decoration: none;
-  color: black;
-}
 footer .contacto-footer .contacto-cuenta {
   display: flex;
   flex-direction: column;
