@@ -78,19 +78,33 @@ header:hover .carrito-container {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
 }
-#carritoModal .cerrarModal {
+#carritoModal .modal-content .cerrarModal {
   color: #aaa;
-  float: right;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
 }
-#carritoModal:hover, #carritoModal:focus {
+#carritoModal .modal-content:hover, #carritoModal .modal-content:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+#carritoModal .modal-content h2 {
+  font-size: 20px;
+}
+#carritoModal .modal-content #total {
+  font-weight: bold;
+}
+#carritoModal .modal-content #btn-finalizar-compra {
+  width: 150px;
+}
+#carritoModal .modal-content .btn-vaciar {
+  width: 150px;
 }
 
 #productosContainer {

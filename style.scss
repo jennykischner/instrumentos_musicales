@@ -85,21 +85,36 @@ header {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
+    .cerrarModal {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    &:hover,
+    &:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    h2{
+      font-size: 20px;
+    }
+    #total{
+      font-weight: bold;
+    }
+    #btn-finalizar-compra{
+      width: 150px;
+    }
+    .btn-vaciar{
+      width: 150px;
+    }
   }
-  .cerrarModal {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  &:hover,
-  &:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
+  
 }
 // Estilos Cards
 

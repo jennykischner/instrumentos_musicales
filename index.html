@@ -80,11 +80,12 @@
          <!--Carrito--> 
         <div id="carritoModal">
             <div class="modal-content">
-              <span class="cerrarModal">&times;</span>
+              <span class="cerrarModal" >&times;</span>
               <h2>Carrito de Compras</h2>
               <ul id="carrito-lista"></ul>
               <p id="total"></p>
-              <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+              <button id="btn-finalizar-compra" onClick="finalizarCompra()">Finalizar Compra</button>
+              <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar Carrito</button>
             </div>
           </div>
 
