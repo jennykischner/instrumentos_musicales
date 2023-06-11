@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta
+        name="description"
+        content="Descubrí los productos más buscados que no te podés perder en Violines "
+      />
+      <meta
+        name="keywords"
+        content="Violin, cuerda, arco, resina"
+      />
+      <link
+        rel="shortcut icon"
+        href="./img/logo_navegador.jpg"
+        type="image/x-icon"
+      />
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/5f812df695.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    
+        <title>Instrumentos Musicales</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+<body>
+    <!--Encabezado-->
+    <header>
+
+        <img class="imagen-logo" src="./img/logo.jpg" alt="Logo">
+        <div class="iconoInicio">
+            <a
+              href="#"
+              title="Inicio Sesión"
+              rel="nofollow"
+              class="header-action-icon pull-right font-weight-bold"
+              id="inicioSesionLink"
+            >
+              <i class="fas fa-sign-in-alt"></i>
+              <span class="badge cart-resume"></span> 
+              Iniciar Sesión
+            </a>
+          </div>
+          <div class="iconoCarrito">
+            <a href="#" title="Carrito" rel="nofollow" class="header-action-icon pull-right font-weight-bold" id="abrirCarrito">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge cart-resume"></span>
+              Carrito
+            </a>
+          </div>
+    </header>
+
+    <body>
+        
+         <!--Cards-->   
+        <div id="productosContainer"></div>
+      
+         <!--Carrito--> 
+        <div id="carritoModal">
+            <div class="modal-content">
+              <span class="cerrarModal">&times;</span>
+              <h2>Carrito de Compras</h2>
+              <ul id="carrito-lista"></ul>
+              <p id="total"></p>
+              <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+            </div>
+          </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="imagen-footer">
+          <img src="./img/logo.jpg" alt="Logo" />
+        </div>
+        <div class="contacto-footer">
+          <div class="contacto-titulo">
+            <h3>JK Instrumentos Musicales</h3>
+            <ul>
+              <li>Ofertas online, en cuotas y con envío gratis</li>
+            </ul>
+          </div>
+          <div class="carrito-footer">
+            <h3>Mis Compras</h3>
+            <a href="">Ver Carrito</a>
+          </div>
+          <div class="contacto-local">
+            <h3>Contacto</h3>
+            <ul>
+              <li>11-34654780</li>
+              <li>jk_instrumentos@gmail.com</li>
+              <li>Juan Jose Castelli 6200</li>
+              <li>
+                Lunes a Viernes de 10 a 14 y de 15 a 19 - Sábados de 10 a 14
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+
+    <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script> 
+  <script src="app.js"></script>   
+</body>
+</html>
