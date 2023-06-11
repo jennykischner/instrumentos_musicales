@@ -193,7 +193,7 @@ function agregarAlCarrito(productoId) {
     carrito.push(producto);
     actualizarCarrito();
     actualizarTotal();
-    guardarCarrito(); 
+    guardarCarrito();
 
     Toastify({
       text: "Producto agregado al carrito",
@@ -201,13 +201,13 @@ function agregarAlCarrito(productoId) {
       destination: "https://github.com/apvarun/toastify-js",
       newWindow: true,
       close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "center", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
+      gravity: "top",
+      position: "center",
+      stopOnFocus: true,
       style: {
         background: "linear-gradient(to right, #00b09b, #96c93d)",
       },
-      onClick: function () {}, // Callback after click
+      onClick: function () {},
     }).showToast();
   }
 }
@@ -239,28 +239,28 @@ function actualizarCarrito() {
 // Función para actualizar el total de la compra
 
 function actualizarTotal() {
-    const totalElemento = document.getElementById("total");
-    let total = 0;
-  
-    carrito.forEach((producto) => {
-      total += parseFloat(producto.precio.replace("$", ""));
-    });
-  
-    totalElemento.textContent = `Total: $${total.toFixed(2)}`;
-  }
+  const totalElemento = document.getElementById("total");
+  let total = 0;
+
+  carrito.forEach((producto) => {
+    total += parseFloat(producto.precio.replace("$", ""));
+  });
+
+  totalElemento.textContent = `Total: $${total.toFixed(2)}`;
+}
+
 // Vaciar el carrito
 
 function vaciarCarrito() {
-    carrito = [];
-    actualizarCarrito();
-    actualizarTotal();
-    guardarCarrito();
+  carrito = [];
+  actualizarCarrito();
+  actualizarTotal();
+  guardarCarrito();
 }
 
-
 // Función para finalizar la compra
-const btnFinalizarCompra = document.getElementById("btn-finalizar-compra");
 
+const btnFinalizarCompra = document.getElementById("btn-finalizar-compra");
 
 btnFinalizarCompra.addEventListener("click", finalizarCompra);
 
@@ -277,9 +277,5 @@ function finalizarCompra() {
   vaciarCarrito();
 }
 
-
-
-
 mostrarProductos();
 obtenerCarritoGuardado();
-
