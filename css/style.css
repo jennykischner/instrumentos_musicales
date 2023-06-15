@@ -106,7 +106,8 @@ header:hover .carrito-container {
   width: 150px;
 }
 
-#productosContainer {
+#productosContainer,
+#productosContainerVioloncellos {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(3, 1fr);
@@ -114,27 +115,33 @@ header:hover .carrito-container {
   margin: 50px 20%;
   gap: 20px;
 }
-#productosContainer .card {
+#productosContainer .card,
+#productosContainerVioloncellos .card {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#productosContainer .card img {
+#productosContainer .card img,
+#productosContainerVioloncellos .card img {
   width: 286px;
   height: 286px;
 }
-#productosContainer .card .card-body .card-title {
+#productosContainer .card .card-body .card-title,
+#productosContainerVioloncellos .card .card-body .card-title {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
 }
-#productosContainer .card .card-body .card-text {
+#productosContainer .card .card-body .card-text,
+#productosContainerVioloncellos .card .card-body .card-text {
   font-family: "Quicksand", sans-serif;
 }
-#productosContainer .card .card-body .precio_producto {
+#productosContainer .card .card-body .precio_producto,
+#productosContainerVioloncellos .card .card-body .precio_producto {
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
 }
-#productosContainer .card.fade-in {
+#productosContainer .card.fade-in,
+#productosContainerVioloncellos .card.fade-in {
   animation: fade-in 0.5s;
 }
 

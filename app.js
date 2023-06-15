@@ -265,7 +265,6 @@ const btnFinalizarCompra = document.getElementById("btn-finalizar-compra");
 btnFinalizarCompra.addEventListener("click", finalizarCompra);
 
 function finalizarCompra() {
-  // Mostrar la alerta de éxito
   Swal.fire({
     position: "center",
     icon: "success",
