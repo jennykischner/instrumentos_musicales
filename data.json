@@ -1,0 +1,165 @@
+{
+    "tarjetasViolin": [
+      {
+        "Id": "1",
+        "imagen": "../img/violin_1.jpg",
+        "titulo": "CREMONA SV-175 4/4",
+        "descripcion": "Cremona Violin Outfit 4/4 Accesorios de ébano - Cremona VP-203 Puente de arce envejecido de 3 estrellas. Incluye estuche.",
+        "precio": "$193.516"
+      },
+      {
+        "Id": "2",
+        "imagen": "../img/violin_2.jpg",
+        "titulo": "CREMONA SV-75 4/4",
+        "descripcion": "Cremona Violin Outfit 4/4 Forma estándar: madera dura ebonizada fácil de afinar. Estuche: Interior con forro de felpa.",
+        "precio": "$99.699"
+      },
+      {
+        "Id": "3",
+        "imagen": "../img/violin_3.jpg",
+        "titulo": "STAGG EVN44BK",
+        "descripcion": "Violin Electrico - Incluye Auriculares y Estuche - Color Negro. ecualizador de 3 bandas con control de volumen, graves y agudos",
+        "precio": "$130.787"
+      },
+      {
+        "Id": "4",
+        "imagen": "../img/violin_4.jpg",
+        "titulo": "CERVINI HV-100",
+        "descripcion": "Violín De Estudio, 4/4, Tapa Pícea, Cuerpo Arce, Diapasón Ma. Mentonera de Madera, Puente de Arce.",
+        "precio": "$52.163"
+      },
+      {
+        "Id": "5",
+        "imagen": "../img/violin_5.jpg",
+        "titulo": "YIRELLY CV 103 4/4 HP",
+        "descripcion": "Acústico 4/4, tapa de pino spruce sólido, fondo y aros de maple, lustre brillante, incluye estuche y arco.",
+        "precio": "$57.204"
+      },
+      {
+        "Id": "6",
+        "imagen": "../img/violin_6.jpg",
+        "titulo": "YIRELLY CV 101 4/4",
+        "descripcion": "Violín Acústico 4/4, tapa plywood, fondo y aros plywood, lustre satinado, con estuche, arco y resina.",
+        "precio": "$42.724"
+      }
+    ],
+    "tarjetasViola": [
+        {
+            "Id": "7",
+            "imagen": "../img/viola_1.jpg",
+            "titulo": "ANCONA JVA-01 16",
+            "descripcion": "Viola Madera maciza con tapa de pino abeto y fondo y aros de maple. Barniz mate color marrón oscuro. Cordal de fibra.",
+            "precio": "$41.950"
+          },
+          {
+            "Id": "8",
+            "imagen": "../img/viola_2.jpg",
+            "titulo": "ANCONA JVA-02",
+            "descripcion": "100% hecho a mano a partir del secado natural de las maderas durante 10 años. Diapasón, clavijas, cordal y botón de ébano.",
+            "precio": "$251.620"
+          },
+          {
+            "Id": "9",
+            "imagen": "../img/viola_3.jpg",
+            "titulo": "ANCONA AVA-01",
+            "descripcion": "100% hecha a mano a partir del secado natural de las maderas por más de 15 años. Accesorios y cordal de ébano.",
+            "precio": "$505.710"
+        }
+    
+    ],
+
+    "tarjetasVioloncellos": [
+        {
+          "Id": "10",
+          "imagen": "../img/cello_1.jpg",
+          "titulo": "ANCONA JCE-02 4/4",
+          "descripcion": "Hecho a mano. Fondo y aros de maple macizo bien flameado y tapa de pino abeto macizo. Diapasón y clavijas de ebano.",
+          "precio": "$300.130"
+        },
+        {
+          "Id": "11",
+          "imagen": "../img/cello_2.jpg",
+          "titulo": "ANCONA JCE-01A 4/4 ",
+          "descripcion": "Tapa de abeto macizo tallado, fondo,aros y mango de maple macizo. Barniz brillante. Diapasón y clavijas de ebano.",
+          "precio": "$160.350"
+        },
+        {
+          "Id": "12",
+          "imagen": "../img/cello_3.jpg",
+          "titulo": "ANCONA JCE-03 4/4",
+          "descripcion": "100% hecho a mano a partir del secado natural de las maderas durante 10 años. Barniz tradicional al alcohol y filetes incrustados.",
+          "precio": "$481.040"
+        },
+        {
+          "Id": "13",  
+          "imagen": "../img/cello_4.jpg",
+          "titulo": "ANCONA BCE-10 4/4",
+          "descripcion": "Barroco madera maciza/boxwood. Hermoso fondo y aros de arce flameado y tapa de pino abeto. Diapason, clavijas y cordal de boj. Tapa de Abeto Maciza.",
+          "precio": "$738.400"
+        },
+        {
+          "Id": "14",  
+          "imagen": "../img/cello_5.jpg",
+          "titulo": "ANCONA ACE-01 4/4  ",
+          "descripcion": "100% hecho a mano a partir del secado natural de las maderas durante 15 años.  Fondo y aros de maple macizo excelente flameado y tapa de pino abeto.",
+          "precio": "$1.138.860"
+        },
+        {
+          "Id": "15",  
+          "imagen": "../img/cello_6.jpg",
+          "titulo": "ANCONA JCE-04 4/4",
+          "descripcion": "100% hecho a mano a partir del secado natural de las maderas durante 15 años. Clavijas y cordal de ébano. Viene con arco de madera palo brasil y funda.",
+          "precio": "$694.820"
+        }
+  
+    ],
+
+    "tarjetasContrabajos" : [
+        {
+          "Id": "16",  
+          "imagen": "../img/contrabajo_1.jpg",
+          "titulo": "ANCONA JBS-04 ¾",
+          "descripcion": "100% hecho a mano a partir del secado natural de las maderas durante 10 años.  Barniz tradicional al alcohol y filetes.",
+          "precio": "$641.380"
+        },
+        {
+          "Id": "17",   
+          "imagen": "../img/contrabajo_2.jpg",
+          "titulo": "ANCONA JBS-01 ¾",
+          "descripcion": "Fondo y aros de maple laminado y tapa de pino abeto laminado. Clavijero metálico.  Viene con arco de madera palo brasil y funda.",
+          "precio": "$234.350 "
+        },
+        {
+          "Id": "18",  
+          "imagen": "../img/contrabajo_3.jpg",
+          "titulo": "ANCONA JBS-01 ½",
+          "descripcion": "Fondo y aros de maple laminado y tapa de pino abeto laminado.  Diapasón y cordal de madera ebonizada de 1ra.calidad.",
+          "precio": "$234.350"
+        },
+        {
+          "Id": "19",  
+          "imagen": "../img/contrabajo_4.jpg",
+          "titulo": "ANCONA JBS-01 ¼",
+          "descripcion": "Fondo y aros de maple laminado y tapa de pino abeto laminado. Clavijero metálico.  Viene con arco de madera palo brasil y funda.",
+          "precio": "$234.350"
+        },
+        {
+          "Id": "20",  
+          "imagen": "../img/contrabajo_5.jpg",
+          "titulo": "ANCONA JBS-01 1/8",
+          "descripcion": "Fondo y aros de maple laminado y tapa de pino abeto laminado.  Diapasón y cordal de madera ebonizada de 1ra.calidad.",
+          "precio": "$234.350"
+        },
+        {
+          "Id": "21",  
+          "imagen": "../img/contrabajo_6.jpg",
+          "titulo": "ANCONA JBS-03 ¾",
+          "descripcion": "Tapa de abeto macizo tallado, fondo, aros y mango de maple macizo.  Barniz al alcohol. Clavijero metálico. Incluye arco de madera palo brasil.",
+          "precio": "$468.700"
+        }
+  
+    ]
+    
+
+}
+        

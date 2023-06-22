@@ -15,6 +15,15 @@ header {
   justify-content: center;
   height: 250px;
   padding: 20px;
+
+  .navbar{
+    .container-fluid{
+      .form-control{
+        width: 300px;
+      }
+    }
+  }
+
   .imagen-logo {
     width: 150px;
     height: auto;
@@ -117,8 +126,10 @@ header {
 }
 // Estilos Cards
 
-#productosContainer,
-#productosContainerVioloncellos {
+#violin-container,
+#viola-container,
+#violoncello-container,
+#contrabajo-container {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(3, 1fr);
@@ -149,6 +160,10 @@ header {
       .precio_producto {
         font-family: "Quicksand", sans-serif;
         font-weight: bold;
+      }
+
+      .btn {
+        display: flex;
       }
     }
 

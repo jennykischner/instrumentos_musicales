@@ -61,111 +61,140 @@ window.addEventListener("click", function (event) {
 
 // Cards de productos
 
-const tarjetasViolin = [
-  {
-    Id: 1,
-    imagen: "../img/violin_1.jpg",
-    titulo: "CREMONA SV-175 4/4",
-    descripcion: `Cremona Violin Outfit 4/4 Accesorios de ébano - Cremona VP-203 Puente de arce envejecido de 3 estrellas. `,
-    precio: "$193516",
-  },
-  {
-    Id: 2,
-    imagen: "../img/violin_2.jpg",
-    titulo: "CREMONA SV-75 4/4",
-    descripcion: `Cremona Violin Outfit 4/4 Forma estándar: madera dura ebonizada fácil de afinar. Estuche: Interior con forro de felpa.`,
-    precio: "$99699",
-  },
-  {
-    Id: 3,
-    imagen: "../img/violin_3.jpg",
-    titulo: "STAGG EVN44BK",
-    descripcion: `Violin Electrico - Incluye Auriculares y Estuche - Color Negro. Incluye Auriculares y Estuche. `,
-    precio: "$130787",
-  },
-  {
-    Id: 4,
-    imagen: "../img/violin_4.jpg",
-    titulo: "CERVINI HV-100",
-    descripcion: `Violín De Estudio, 4/4, Tapa Pícea, Cuerpo Arce, Diapasón Ma. Mentonera de Madera, Puente de Arce. `,
-    precio: "$52163",
-  },
-  {
-    Id: 5,
-    imagen: "../img/violin_5.jpg",
-    titulo: "YIRELLY CV 103 4/4 HP",
-    descripcion: `Acústico 4/4, tapa de pino spruce sólido, fondo y aros de maple, lustre brillante, incluye estuche, arco y resina. `,
-    precio: "$57204",
-  },
-  {
-    Id: 6,
-    imagen: "../img/violin_6.jpg",
-    titulo: "YIRELLY CV 101 4/4",
-    descripcion: `Violín Acústico 4/4, tapa plywood, fondo y aros plywood, lustre satinado, con estuche, arco y resina. `,
-    precio: "$42724",
-  },
-  {
-    Id: 7,
-    imagen: "../img/violin_7.jpg",
-    titulo: "KINGLOS HB-1312",
-    descripcion: `Violin Acustico 4/4 de madera, diseño con craneos, instrumento musical personalizado. Incluye estuche semi-rigido y arco.`,
-    precio: "$96002",
-  },
-  {
-    Id: 8,
-    imagen: "../img/violin_8.jpg",
-    titulo: "KINGLOS YZ-1201 4/4",
-    descripcion: `Violin Acustico 4/4 de madera, diseño flores, instrumento musical personalizado. Incluye estuche semi-rigido y arco.`,
-    precio: "$90179",
-  },
-  {
-    Id: 9,
-    imagen: "../img/violin_9.jpg",
-    titulo: "STRADELLA MV141944",
-    descripcion: ` 4/4. Tapa pino seleccionado Fully Carved, fondo maple fully carved. Clavijas, cordal y mentonera de ébano. 4 afinadores.`,
-    precio: "$261880",
-  },
-  {
-    Id: 10,
-    imagen: "../img/violin_10.jpg",
-    titulo: "KINGLOS DSZA-1201 INTERMEDIO A 4/4 ",
-    descripcion: `Eléctrico 4/4 intermedio A. Diseño de pintura especial en todo el instrumento. Sistema de micrófono activo con control de tono y volumen.`,
-    precio: "$150125",
-  },
-  {
-    Id: 11,
-    imagen: "../img/violin_11.jpg",
-    titulo: "KINGLOS PJB-1002 BEGINEER 4/4",
-    descripcion: `Textura de arce: piel de tigre transparente, pintura artística, ensamblaje de alto nivel, mano de obra exquisita. Incluye Estuche y resina. `,
-    precio: "$53125",
-  },
-  {
-    Id: 12,
-    imagen: "../img/violin_12.jpg",
-    titulo: "PARQUER VIOLIN MASTER ",
-    descripcion: `4/4. Hermoso violín de estudio avanzado para niveles intermedios. Su madera es conservada 10 años. Sistema de micrófono. Incluye Estuche y resina. `,
-    precio: "$70308",
-  },
-];
 
-function mostrarProductos() {
-  const container = document.getElementById("productosContainer");
-  let html = "";
 
-  tarjetasViolin.forEach((producto) => {
-    html += `
-        <div class="card">
-          <img src="${producto.imagen}" alt="${producto.titulo}">
-          <h3>${producto.titulo}</h3>
-          <p>${producto.descripcion}</p>
-          <p>Precio: ${producto.precio}</p>
-          <button class="comprar-btn" onclick="agregarAlCarrito(${producto.Id})">Comprar</button>
-        </div>
-      `;
-  });
+fetch("data.json")
+  .then((response) => response.json())
+  .then((data) => {
+    const violinContainer = document.getElementById("violin-container");
+    const violaContainer = document.getElementById("viola-container");
+    const violoncelloContainer = document.getElementById("violoncello-container");
+    const contrabajoContainer = document.getElementById("contrabajo-container");
 
-  container.innerHTML = html;
+    const createProductCard = (tarjeta, agregarAlCarritoFn) => {
+      const div = document.createElement("div");
+      div.classList.add("card", "m-2", "p-3");
+
+      const img = document.createElement("img");
+      img.classList.add("card-img-top");
+      img.src = tarjeta.imagen;
+      img.alt = tarjeta.titulo;
+      div.appendChild(img);
+
+      const divCardBody = document.createElement("div");
+      divCardBody.classList.add("card-body");
+
+      const h5 = document.createElement("h5");
+      h5.classList.add("card-title");
+      h5.textContent = tarjeta.titulo;
+      divCardBody.appendChild(h5);
+
+      const p = document.createElement("p");
+      p.classList.add("card-text");
+      p.textContent = tarjeta.descripcion;
+      divCardBody.appendChild(p);
+
+      const spanPrecio = document.createElement("span");
+      spanPrecio.classList.add("precio_producto");
+      spanPrecio.textContent = tarjeta.precio;
+      divCardBody.appendChild(spanPrecio);
+
+      const btn = document.createElement("button");
+      btn.classList.add("btn", "btn-primary");
+      btn.textContent = "Añadir al carrito";
+      btn.addEventListener("click", () => {
+        agregarAlCarritoFn(tarjeta.Id);
+      });
+      divCardBody.appendChild(btn);
+
+      div.appendChild(divCardBody);
+
+      return div;
+    };
+
+    // Mostrar cards de violín
+    data.tarjetasViolin.forEach((tarjeta) => {
+      const div = createProductCard(tarjeta, agregarViolinAlCarrito);
+      violinContainer.appendChild(div);
+    });
+
+    // Mostrar cards de viola
+    data.tarjetasViola.forEach((tarjeta) => {
+      const div = createProductCard(tarjeta, agregarViolaAlCarrito);
+      violaContainer.appendChild(div);
+    });
+
+    // Mostrar cards de violoncello
+    data.tarjetasVioloncellos.forEach((tarjeta) => {
+      const div = createProductCard(tarjeta, agregarVioloncelloAlCarrito);
+      violoncelloContainer.appendChild(div);
+    });
+
+    // Mostrar cards de contrabajo
+    data.tarjetasContrabajos.forEach((tarjeta) => {
+      const div = createProductCard(tarjeta, agregarContrabajoAlCarrito);
+      contrabajoContainer.appendChild(div);
+    });
+
+    // Función para agregar productos al carrito
+
+function agregarAlCarrito(producto) {
+  carrito.push(producto);
+  actualizarCarrito();
+  actualizarTotal();
+  guardarCarrito();
+
+  Toastify({
+    text: "Producto agregado al carrito",
+    duration: 1000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top",
+    position: "center",
+    stopOnFocus: true,
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+    },
+    onClick: function () {},
+  }).showToast();
 }
+
+// Funciones específicas para cada tipo de producto
+function agregarViolinAlCarrito(productoId) {
+  const producto = data.tarjetasViolin.find((p) => p.Id === productoId);
+  if (producto) {
+    agregarAlCarrito(producto);
+  }
+}
+
+function agregarViolaAlCarrito(productoId) {
+  const producto = data.tarjetasViola.find((p) => p.Id === productoId);
+  if (producto) {
+    agregarAlCarrito(producto);
+  }
+}
+
+function agregarVioloncelloAlCarrito(productoId) {
+  const producto = data.tarjetasVioloncellos.find((p) => p.Id === productoId);
+  if (producto) {
+    agregarAlCarrito(producto);
+  }
+}
+
+function agregarContrabajoAlCarrito(productoId) {
+  const producto = data.tarjetasContrabajos.find((p) => p.Id === productoId);
+  if (producto) {
+    agregarAlCarrito(producto);
+  }
+}
+
+
+  })
+ 
+  .catch((error) => {
+    console.log("Error al cargar el archivo JSON:", error);
+  });
 
 // Almacenar productos
 
@@ -185,32 +214,6 @@ function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-// Función para agregar productos al carrito
-
-function agregarAlCarrito(productoId) {
-  const producto = tarjetasViolin.find((p) => p.Id === productoId);
-  if (producto) {
-    carrito.push(producto);
-    actualizarCarrito();
-    actualizarTotal();
-    guardarCarrito();
-
-    Toastify({
-      text: "Producto agregado al carrito",
-      duration: 1000,
-      destination: "https://github.com/apvarun/toastify-js",
-      newWindow: true,
-      close: true,
-      gravity: "top",
-      position: "center",
-      stopOnFocus: true,
-      style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
-      },
-      onClick: function () {},
-    }).showToast();
-  }
-}
 
 // Función para eliminar productos del carrito
 
@@ -276,5 +279,5 @@ function finalizarCompra() {
   vaciarCarrito();
 }
 
-mostrarProductos();
-obtenerCarritoGuardado();
+
+obtenerCarritoGuardado()

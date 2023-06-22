@@ -12,6 +12,9 @@ header {
   height: 250px;
   padding: 20px;
 }
+header .navbar .container-fluid .form-control {
+  width: 300px;
+}
 header .imagen-logo {
   width: 150px;
   height: auto;
@@ -106,8 +109,10 @@ header:hover .carrito-container {
   width: 150px;
 }
 
-#productosContainer,
-#productosContainerVioloncellos {
+#violin-container,
+#viola-container,
+#violoncello-container,
+#contrabajo-container {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(3, 1fr);
@@ -115,33 +120,51 @@ header:hover .carrito-container {
   margin: 50px 20%;
   gap: 20px;
 }
-#productosContainer .card,
-#productosContainerVioloncellos .card {
+#violin-container .card,
+#viola-container .card,
+#violoncello-container .card,
+#contrabajo-container .card {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#productosContainer .card img,
-#productosContainerVioloncellos .card img {
+#violin-container .card img,
+#viola-container .card img,
+#violoncello-container .card img,
+#contrabajo-container .card img {
   width: 286px;
   height: 286px;
 }
-#productosContainer .card .card-body .card-title,
-#productosContainerVioloncellos .card .card-body .card-title {
+#violin-container .card .card-body .card-title,
+#viola-container .card .card-body .card-title,
+#violoncello-container .card .card-body .card-title,
+#contrabajo-container .card .card-body .card-title {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
 }
-#productosContainer .card .card-body .card-text,
-#productosContainerVioloncellos .card .card-body .card-text {
+#violin-container .card .card-body .card-text,
+#viola-container .card .card-body .card-text,
+#violoncello-container .card .card-body .card-text,
+#contrabajo-container .card .card-body .card-text {
   font-family: "Quicksand", sans-serif;
 }
-#productosContainer .card .card-body .precio_producto,
-#productosContainerVioloncellos .card .card-body .precio_producto {
+#violin-container .card .card-body .precio_producto,
+#viola-container .card .card-body .precio_producto,
+#violoncello-container .card .card-body .precio_producto,
+#contrabajo-container .card .card-body .precio_producto {
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
 }
-#productosContainer .card.fade-in,
-#productosContainerVioloncellos .card.fade-in {
+#violin-container .card .card-body .btn,
+#viola-container .card .card-body .btn,
+#violoncello-container .card .card-body .btn,
+#contrabajo-container .card .card-body .btn {
+  display: flex;
+}
+#violin-container .card.fade-in,
+#viola-container .card.fade-in,
+#violoncello-container .card.fade-in,
+#contrabajo-container .card.fade-in {
   animation: fade-in 0.5s;
 }
 
