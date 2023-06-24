@@ -1,4 +1,4 @@
-// Inicio de Sesión del Usuario
+// INICIO DE SESION DEL USUARIO
 
 const inicioSesionLink = document.getElementById("inicioSesionLink");
 
@@ -38,7 +38,7 @@ inicioSesionLink.addEventListener("click", async (event) => {
   }
 });
 
-// Función modal del carrito
+// FUNCION MODAL DEL CARRITO
 
 const abrirCarritoBtn = document.getElementById("abrirCarrito");
 const carritoModal = document.getElementById("carritoModal");
@@ -59,21 +59,22 @@ window.addEventListener("click", function (event) {
   }
 });
 
-// Cards de productos
-
-
+// CARDS DE PRODUCTOS
 
 fetch("data.json")
   .then((response) => response.json())
   .then((data) => {
     const violinContainer = document.getElementById("violin-container");
     const violaContainer = document.getElementById("viola-container");
-    const violoncelloContainer = document.getElementById("violoncello-container");
+    const violoncelloContainer = document.getElementById(
+      "violoncello-container"
+    );
     const contrabajoContainer = document.getElementById("contrabajo-container");
 
     const createProductCard = (tarjeta, agregarAlCarritoFn) => {
       const div = document.createElement("div");
       div.classList.add("card", "m-2", "p-3");
+      div.setAttribute("data-instrumento", tarjeta.instrumento);
 
       const img = document.createElement("img");
       img.classList.add("card-img-top");
@@ -112,95 +113,136 @@ fetch("data.json")
       return div;
     };
 
-    // Mostrar cards de violín
+    // CARDS DE VIOLIN
     data.tarjetasViolin.forEach((tarjeta) => {
       const div = createProductCard(tarjeta, agregarViolinAlCarrito);
       violinContainer.appendChild(div);
     });
 
-    // Mostrar cards de viola
+    // CARDS DE VIOLA
     data.tarjetasViola.forEach((tarjeta) => {
       const div = createProductCard(tarjeta, agregarViolaAlCarrito);
       violaContainer.appendChild(div);
     });
 
-    // Mostrar cards de violoncello
+    // CARDS DE VIOLONCELLO
     data.tarjetasVioloncellos.forEach((tarjeta) => {
       const div = createProductCard(tarjeta, agregarVioloncelloAlCarrito);
       violoncelloContainer.appendChild(div);
     });
 
-    // Mostrar cards de contrabajo
+    // CARDS DE CONTRABAJO
     data.tarjetasContrabajos.forEach((tarjeta) => {
       const div = createProductCard(tarjeta, agregarContrabajoAlCarrito);
       contrabajoContainer.appendChild(div);
     });
 
-    // Función para agregar productos al carrito
+    // FILTRAR INSTRUMENTOS POR LA BARRA DE BUSQUEDA
 
-function agregarAlCarrito(producto) {
-  carrito.push(producto);
-  actualizarCarrito();
-  actualizarTotal();
-  guardarCarrito();
+    function filterResults(event) {
+      event.preventDefault();
 
-  Toastify({
-    text: "Producto agregado al carrito",
-    duration: 1000,
-    destination: "https://github.com/apvarun/toastify-js",
-    newWindow: true,
-    close: true,
-    gravity: "top",
-    position: "center",
-    stopOnFocus: true,
-    style: {
-      background: "linear-gradient(to right, #00b09b, #96c93d)",
-    },
-    onClick: function () {},
-  }).showToast();
-}
+      const searchInput = document.getElementById("searchInput");
+      const searchTerm = searchInput.value.toLowerCase();
 
-// Funciones específicas para cada tipo de producto
-function agregarViolinAlCarrito(productoId) {
-  const producto = data.tarjetasViolin.find((p) => p.Id === productoId);
-  if (producto) {
-    agregarAlCarrito(producto);
-  }
-}
+      const productCards = document.querySelectorAll(".card");
 
-function agregarViolaAlCarrito(productoId) {
-  const producto = data.tarjetasViola.find((p) => p.Id === productoId);
-  if (producto) {
-    agregarAlCarrito(producto);
-  }
-}
+      productCards.forEach((card) => {
+        const instrumento = card.getAttribute("data-instrumento");
+        const cardText = card.textContent.toLowerCase();
 
-function agregarVioloncelloAlCarrito(productoId) {
-  const producto = data.tarjetasVioloncellos.find((p) => p.Id === productoId);
-  if (producto) {
-    agregarAlCarrito(producto);
-  }
-}
-
-function agregarContrabajoAlCarrito(productoId) {
-  const producto = data.tarjetasContrabajos.find((p) => p.Id === productoId);
-  if (producto) {
-    agregarAlCarrito(producto);
-  }
-}
+        if (instrumento === searchTerm || cardText.includes(searchTerm)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
 
 
+    const form = document.querySelector("form");
+    form.addEventListener("submit", filterResults);
+
+    const searchInput = document.getElementById("searchInput");
+    searchInput.addEventListener("input", (event) => {
+      const searchTerm = event.target.value.toLowerCase();
+
+      if (searchTerm === "") {
+        const productCards = document.querySelectorAll(".card");
+        productCards.forEach((card) => {
+          card.style.display = "block";
+        });
+      }
+    });
+
+    filterResults(new Event("submit"));
+
+    // FUNCION PARA AGREGAR AL CARRITO
+
+    function agregarAlCarrito(producto) {
+      carrito.push(producto);
+      actualizarCarrito();
+      actualizarTotal();
+      guardarCarrito();
+
+      Toastify({
+        text: "Producto agregado al carrito",
+        duration: 1000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "center",
+        stopOnFocus: true,
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function () {},
+      }).showToast();
+    }
+
+    function agregarViolinAlCarrito(productoId) {
+      const producto = data.tarjetasViolin.find((p) => p.Id === productoId);
+      if (producto) {
+        agregarAlCarrito(producto);
+      }
+    }
+
+    function agregarViolaAlCarrito(productoId) {
+      const producto = data.tarjetasViola.find((p) => p.Id === productoId);
+      if (producto) {
+        agregarAlCarrito(producto);
+      }
+    }
+
+    function agregarVioloncelloAlCarrito(productoId) {
+      const producto = data.tarjetasVioloncellos.find(
+        (p) => p.Id === productoId
+      );
+      if (producto) {
+        agregarAlCarrito(producto);
+      }
+    }
+
+    function agregarContrabajoAlCarrito(productoId) {
+      const producto = data.tarjetasContrabajos.find(
+        (p) => p.Id === productoId
+      );
+      if (producto) {
+        agregarAlCarrito(producto);
+      }
+    }
   })
- 
+
   .catch((error) => {
     console.log("Error al cargar el archivo JSON:", error);
   });
 
-// Almacenar productos
+// ALMACENAR PRODUCTOS
 
 let carrito = [];
 
-// Guardar en el Local Storage
+// GUARDAR EN EL LOCAL STORAGE
 function obtenerCarritoGuardado() {
   const carritoGuardado = localStorage.getItem("carrito");
   if (carritoGuardado) {
@@ -214,8 +256,7 @@ function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-
-// Función para eliminar productos del carrito
+//  FUNCION PARA ELIMINAR PRODUCTOS DEL CARRITO
 
 function eliminarDelCarrito(index) {
   carrito.splice(index, 1);
@@ -224,7 +265,7 @@ function eliminarDelCarrito(index) {
   guardarCarrito();
 }
 
-// Función para actualizar el carrito
+// FUNCION PARA ACTUALIZAR EL CARRITO
 
 function actualizarCarrito() {
   const carritoLista = document.getElementById("carrito-lista");
@@ -239,7 +280,7 @@ function actualizarCarrito() {
   carritoLista.innerHTML = html;
 }
 
-// Función para actualizar el total de la compra
+// FUNCION PARA ACTUALIZAR EL TOTAL DE LA COMPRA
 
 function actualizarTotal() {
   const totalElemento = document.getElementById("total");
@@ -249,10 +290,10 @@ function actualizarTotal() {
     total += parseFloat(producto.precio.replace("$", ""));
   });
 
-  totalElemento.textContent = `Total: $${total.toFixed(2)}`;
+  totalElemento.textContent = `Total: $${total.toFixed(3)}`;
 }
 
-// Vaciar el carrito
+// VACIAR EL CARRITO
 
 function vaciarCarrito() {
   carrito = [];
@@ -261,23 +302,124 @@ function vaciarCarrito() {
   guardarCarrito();
 }
 
-// Función para finalizar la compra
+// FUNCION PARA FINALIZAR LA COMPRA
 
 const btnFinalizarCompra = document.getElementById("btn-finalizar-compra");
 
 btnFinalizarCompra.addEventListener("click", finalizarCompra);
 
+obtenerCarritoGuardado()
+
 function finalizarCompra() {
   Swal.fire({
-    position: "center",
-    icon: "success",
-    title: "Tu compra ha sido realizada",
-    showConfirmButton: false,
-    timer: 1500,
+    title: "Ingrese sus datos",
+    html: `
+      <div id="formulario-compra">
+        <label for="nombreCompleto">Nombre completo:</label>
+        <input id="nombreCompleto" class="swal2-input" type="text" placeholder="Nombre completo" required>
+        
+        <label for="email">Correo electrónico:</label>
+        <input id="email" class="swal2-input" type="email" placeholder="Correo electrónico" required>
+        
+        <label for="pagoTarjeta">¿Va a pagar con tarjeta?</label>
+        <input id="pagoTarjeta" class="swal2-input" type="checkbox" onchange="toggleTipoTarjeta()">
+        
+        <div id="tipoTarjetaContainer" style="display: none;">
+          <label for="tipoTarjeta">Seleccione el tipo de tarjeta:</label>
+          <div>
+            <input id="visa" type="checkbox" value="Visa">
+            <label for="visa">Visa</label>
+          </div>
+          <div>
+            <input id="mastercard" type="checkbox" value="Mastercard">
+            <label for="mastercard">Mastercard</label>
+          </div>
+          <div>
+            <input id="amex" type="checkbox" value="American Express">
+            <label for="amex">American Express</label>
+          </div>
+          <div>
+            <input id="naranja" type="checkbox" value="Naranja">
+            <label for="naranja">Naranja</label>
+          </div>
+        </div>
+        
+        <label for="cuotas">¿Desea pagar en cuotas sin interés?</label>
+        <select id="cuotas" class="swal2-input">
+          <option value="no">No</option>
+          <option value="3">3 cuotas</option>
+          <option value="6">6 cuotas</option>
+          <option value="12">12 cuotas</option>
+        </select>
+      </div>
+    `,
+    focusConfirm: false,
+    preConfirm: () => {
+      const nombreCompleto = document.getElementById("nombreCompleto").value;
+      const pagoTarjeta = document.getElementById("pagoTarjeta").checked ? "si" : "no";
+      const tipoTarjeta = getSelectedTarjetas();
+      const cuotas = document.getElementById("cuotas").value;
+
+      const resumen = `
+        <p><strong>Nombre completo:</strong> ${nombreCompleto}</p>
+        <p><strong>Pago con tarjeta:</strong> ${pagoTarjeta}</p>
+        <p><strong>Tipo de tarjeta:</strong> ${tipoTarjeta.join(", ")}</p>
+        <p><strong>Cuotas:</strong> ${cuotas}</p>
+      `;
+
+      localStorage.setItem("resumenCompra", resumen);
+
+    
+      Swal.fire({
+        title: "Resumen de datos",
+        html: resumen,
+        icon: "info",
+        showCancelButton: true,
+        cancelButtonText: "Volver",
+        confirmButtonText: "Finalizar compra",
+        reverseButtons: true,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Tu compra ha sido realizada",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+    
+      vaciarCarrito();
+    },
+    showCancelButton: true,
+    cancelButtonText: "Cancelar",
+    confirmButtonText: "Finalizar compra",
+    reverseButtons: true,
   });
 
-  vaciarCarrito();
+  toggleTipoTarjeta();
 }
 
+function toggleTipoTarjeta() {
+  const tipoTarjetaContainer = document.getElementById("tipoTarjetaContainer");
+  const pagoTarjetaCheckbox = document.getElementById("pagoTarjeta");
 
-obtenerCarritoGuardado()
+  if (pagoTarjetaCheckbox.checked) {
+    tipoTarjetaContainer.style.display = "block";
+  } else {
+    tipoTarjetaContainer.style.display = "none";
+  }
+}
+function getSelectedTarjetas() {
+  const checkboxes = document.querySelectorAll("#tipoTarjetaContainer input[type='checkbox']");
+  const selectedTarjetas = [];
+
+  checkboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+      selectedTarjetas.push(checkbox.value);
+    }
+  });
+
+  return selectedTarjetas;
+}
