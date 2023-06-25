@@ -278,6 +278,7 @@ function actualizarCarrito() {
   });
 
   carritoLista.innerHTML = html;
+  actualizarCantidadCarrito();
 }
 
 // FUNCION PARA ACTUALIZAR EL TOTAL DE LA COMPRA
@@ -293,6 +294,15 @@ function actualizarTotal() {
   totalElemento.textContent = `Total: $${total.toFixed(3)}`;
 }
 
+function actualizarCantidadCarrito() {
+  const cantidadCarrito = document.getElementById("cantidad-carrito");
+  cantidadCarrito.textContent = carrito.length.toString();
+}
+
+window.addEventListener("DOMContentLoaded", actualizarCantidadCarrito);
+
+
+
 // VACIAR EL CARRITO
 
 function vaciarCarrito() {
@@ -300,6 +310,7 @@ function vaciarCarrito() {
   actualizarCarrito();
   actualizarTotal();
   guardarCarrito();
+  actualizarCantidadCarrito();
 }
 
 // FUNCION PARA FINALIZAR LA COMPRA
@@ -309,6 +320,8 @@ const btnFinalizarCompra = document.getElementById("btn-finalizar-compra");
 btnFinalizarCompra.addEventListener("click", finalizarCompra);
 
 obtenerCarritoGuardado()
+
+//FORMULARIO DE COMPRA 
 
 function finalizarCompra() {
   Swal.fire({
@@ -359,6 +372,8 @@ function finalizarCompra() {
       const pagoTarjeta = document.getElementById("pagoTarjeta").checked ? "si" : "no";
       const tipoTarjeta = getSelectedTarjetas();
       const cuotas = document.getElementById("cuotas").value;
+
+      // RESUMEN DE COMPRA
 
       const resumen = `
         <p><strong>Nombre completo:</strong> ${nombreCompleto}</p>
