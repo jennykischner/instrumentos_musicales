@@ -10,7 +10,6 @@ header {
   display: flex;
   justify-content: center;
   height: 250px;
-  padding: 20px;
 }
 header .navbar .container-fluid .form-control {
   width: 300px;
@@ -18,6 +17,7 @@ header .navbar .container-fluid .form-control {
 header .imagen-logo {
   width: 150px;
   height: auto;
+  margin: 0 auto;
 }
 header .iconoInicio {
   margin-left: 20px;
@@ -97,16 +97,25 @@ header:hover .carrito-container {
   cursor: pointer;
 }
 #carritoModal .modal-content h2 {
+  margin-top: 0;
   font-size: 20px;
+  font-family: "Quicksand", sans-serif;
+}
+#carritoModal .modal-content ul#carrito-lista {
+  list-style-type: none;
+  padding: 0;
 }
 #carritoModal .modal-content #total {
+  margin-top: 20px;
   font-weight: bold;
 }
 #carritoModal .modal-content #btn-finalizar-compra {
   width: 150px;
+  font-family: "Quicksand", sans-serif;
 }
 #carritoModal .modal-content .btn-vaciar {
   width: 150px;
+  font-family: "Quicksand", sans-serif;
 }
 
 #imagen-carrito {

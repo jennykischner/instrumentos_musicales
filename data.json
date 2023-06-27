@@ -6,8 +6,7 @@
         "titulo": "VIOLIN CREMONA SV-175 4/4",
         "descripcion": "Cremona Violin Outfit 4/4 Accesorios de ébano - Cremona VP-203 Puente de arce envejecido de 3 estrellas. Incluye estuche.",
         "precio": "$193.516",
-        "Instrumento": "Violin",
-        "stock": "10"
+        "Instrumento": "Violin"
       },
       {
         "Id": "2",
@@ -15,8 +14,7 @@
         "titulo": "VIOLIN CREMONA SV-75 4/4",
         "descripcion": "Cremona Violin Outfit 4/4 Forma estándar: madera dura ebonizada fácil de afinar. Estuche: Interior con forro de felpa.",
         "precio": "$99.699",
-        "Instrumento": "Violin",
-        "stock": "8"
+        "Instrumento": "Violin"
       },
       {
         "Id": "3",
@@ -24,8 +22,7 @@
         "titulo": "VIOLIN STAGG EVN44BK",
         "descripcion": "Violin Electrico - Incluye Auriculares y Estuche - Color Negro. ecualizador de 3 bandas con control de volumen, graves y agudos",
         "precio": "$130.787",
-        "Instrumento": "Violin",
-        "stock": "20"
+        "Instrumento": "Violin"
       },
       {
         "Id": "4",
@@ -33,8 +30,7 @@
         "titulo": "VIOLIN CERVINI HV-100",
         "descripcion": "Violín De Estudio, 4/4, Tapa Pícea, Cuerpo Arce, Diapasón Ma. Mentonera de Madera, Puente de Arce.",
         "precio": "$52.163",
-        "Instrumento": "Violin",
-        "stock": "12"
+        "Instrumento": "Violin"
       },
       {
         "Id": "5",
@@ -42,8 +38,7 @@
         "titulo": "VIOLIN YIRELLY CV 103 4/4 HP",
         "descripcion": "Acústico 4/4, tapa de pino spruce sólido, fondo y aros de maple, lustre brillante, incluye estuche y arco.",
         "precio": "$57.204",
-        "Instrumento": "Violin",
-        "stock": "5"
+        "Instrumento": "Violin"
       },
       {
         "Id": "6",
@@ -51,8 +46,7 @@
         "titulo": "VIOLIN YIRELLY CV 101 4/4",
         "descripcion": "Violín Acústico 4/4, tapa plywood, fondo y aros plywood, lustre satinado, con estuche, arco y resina.",
         "precio": "$42.724",
-        "Instrumento": "Violin",
-        "stock": "8"
+        "Instrumento": "Violin"
       }
     ],
     "tarjetasViola": [
@@ -62,8 +56,7 @@
             "titulo": "VIOLA ANCONA JVA-01 16",
             "descripcion": "Viola Madera maciza con tapa de pino abeto y fondo y aros de maple. Barniz mate color marrón oscuro. Cordal de fibra.",
             "precio": "$41.950",
-            "Instrumento": "Viola",
-            "stock": "2"
+            "Instrumento": "Viola"
           },
           {
             "Id": "8",
@@ -71,8 +64,7 @@
             "titulo": "VIOLA ANCONA JVA-02",
             "descripcion": "100% hecho a mano a partir del secado natural de las maderas durante 10 años. Diapasón, clavijas, cordal y botón de ébano.",
             "precio": "$251.620",
-            "Instrumento": "Viola",
-            "stock": "7"
+            "Instrumento": "Viola"
           },
           {
             "Id": "9",
@@ -80,8 +72,7 @@
             "titulo": "VIOLA ANCONA AVA-01",
             "descripcion": "100% hecha a mano a partir del secado natural de las maderas por más de 15 años. Accesorios y cordal de ébano.",
             "precio": "$505.710",
-            "Instrumento": "Viola",
-            "stock": "15"
+            "Instrumento": "Viola"
         }
     
     ],
@@ -93,8 +84,7 @@
           "titulo": " VIOLONCELLO ANCONA JCE-02 4/4",
           "descripcion": "Hecho a mano. Fondo y aros de maple macizo bien flameado y tapa de pino abeto macizo. Diapasón y clavijas de ebano.",
           "precio": "$300.130",
-          "Instrumento": "Violoncello",
-          "stock": "6"
+          "Instrumento": "Violoncello"
         },
         {
           "Id": "11",
@@ -102,8 +92,7 @@
           "titulo": "VIOLONCELLO ANCONA JCE-01A 4/4 ",
           "descripcion": "Tapa de abeto macizo tallado, fondo,aros y mango de maple macizo. Barniz brillante. Diapasón y clavijas de ebano.",
           "precio": "$160.350",
-          "Instrumento": "Violoncello",
-          "stock": "6"
+          "Instrumento": "Violoncello"
         },
         {
           "Id": "12",
@@ -111,8 +100,7 @@
           "titulo": "VIOLONCELLO ANCONA JCE-03 4/4",
           "descripcion": "100% hecho a mano a partir del secado natural de las maderas durante 10 años. Barniz tradicional al alcohol y filetes incrustados.",
           "precio": "$481.040",
-          "Instrumento": "Violoncello",
-          "stock": "10"
+          "Instrumento": "Violoncello"
         },
         {
           "Id": "13",  
@@ -120,17 +108,15 @@
           "titulo": "VIOLONCELLO ANCONA BCE-10 4/4",
           "descripcion": "Barroco madera maciza/boxwood. Hermoso fondo y aros de arce flameado y tapa de pino abeto. Diapason, clavijas y cordal de boj. Tapa de Abeto Maciza.",
           "precio": "$738.400",
-          "Instrumento": "Violoncello",
-          "stock": "15"
+          "Instrumento": "Violoncello"
         },
         {
           "Id": "14",  
           "imagen": "../img/cello_5.jpg",
           "titulo": "VIOLONCELLO ANCONA ACE-01 4/4  ",
           "descripcion": "100% hecho a mano a partir del secado natural de las maderas durante 15 años.  Fondo y aros de maple macizo excelente flameado y tapa de pino abeto.",
-          "precio": "$1.138.860",
-          "Instrumento": "Violoncello",
-          "stock": "14"
+          "precio": "$860.450",
+          "Instrumento": "Violoncello"
         },
         {
           "Id": "15",  
@@ -138,8 +124,7 @@
           "titulo": "VIOLONCELLO ANCONA JCE-04 4/4",
           "descripcion": "100% hecho a mano a partir del secado natural de las maderas durante 15 años. Clavijas y cordal de ébano. Viene con arco de madera palo brasil y funda.",
           "precio": "$694.820",
-          "Instrumento": "Violoncello",
-          "stock": "4"
+          "Instrumento": "Violoncello"
         }
   
     ],
@@ -151,8 +136,7 @@
           "titulo": "CONTRABAJO ANCONA JBS-04 ¾",
           "descripcion": "100% hecho a mano a partir del secado natural de las maderas durante 10 años.  Barniz tradicional al alcohol y filetes.",
           "precio": "$641.380",
-          "Instrumento": "Contrabajo",
-          "stock": "4"
+          "Instrumento": "Contrabajo"
         },
         {
           "Id": "17",   
@@ -160,8 +144,7 @@
           "titulo": "CONTRABAJO ANCONA JBS-01 ¾",
           "descripcion": "Fondo y aros de maple laminado y tapa de pino abeto laminado. Clavijero metálico.  Viene con arco de madera palo brasil y funda.",
           "precio": "$234.350 ",
-          "Instrumento": "Contrabajo",
-          "stock": "6"
+          "Instrumento": "Contrabajo"
         },
         {
           "Id": "18",  
@@ -169,8 +152,7 @@
           "titulo": "CONTRABAJO ANCONA JBS-01 ½",
           "descripcion": "Fondo y aros de maple laminado y tapa de pino abeto laminado.  Diapasón y cordal de madera ebonizada de 1ra.calidad.",
           "precio": "$234.350",
-          "Instrumento": "Contrabajo",
-          "stock": "12"
+          "Instrumento": "Contrabajo"
         },
         {
           "Id": "19",  
@@ -178,8 +160,7 @@
           "titulo": "CONTRABAJO ANCONA JBS-01 ¼",
           "descripcion": "Fondo y aros de maple laminado y tapa de pino abeto laminado. Clavijero metálico.  Viene con arco de madera palo brasil y funda.",
           "precio": "$234.350",
-          "Instrumento": "Contrabajo",
-          "stock": "10"
+          "Instrumento": "Contrabajo"
         },
         {
           "Id": "20",  
@@ -187,8 +168,7 @@
           "titulo": "CONTRABAJO ANCONA JBS-01 1/8",
           "descripcion": "Fondo y aros de maple laminado y tapa de pino abeto laminado.  Diapasón y cordal de madera ebonizada de 1ra.calidad.",
           "precio": "$234.350",
-          "Instrumento": "Contrabajo",
-          "stock": "5"
+          "Instrumento": "Contrabajo"
         },
         {
           "Id": "21",  
@@ -196,8 +176,7 @@
           "titulo": "CONTRABAJO ANCONA JBS-03 ¾",
           "descripcion": "Tapa de abeto macizo tallado, fondo, aros y mango de maple macizo.  Barniz al alcohol. Clavijero metálico. Incluye arco de madera palo brasil.",
           "precio": "$468.700",
-          "Instrumento": "Contrabajo",
-          "stock": "9"
+          "Instrumento": "Contrabajo"
         }
   
     ]

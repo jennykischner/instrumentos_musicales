@@ -38,6 +38,7 @@ inicioSesionLink.addEventListener("click", async (event) => {
   }
 });
 
+
 // FUNCION MODAL DEL CARRITO
 
 const abrirCarritoBtn = document.getElementById("abrirCarrito");
@@ -68,9 +69,7 @@ fetch("data.json")
 
     const violinContainer = document.getElementById("violin-container");
     const violaContainer = document.getElementById("viola-container");
-    const violoncelloContainer = document.getElementById(
-      "violoncello-container"
-    );
+    const violoncelloContainer = document.getElementById("violoncello-container");
     const contrabajoContainer = document.getElementById("contrabajo-container");
 
     const createProductCard = (tarjeta, agregarAlCarritoFn) => {
@@ -148,7 +147,7 @@ fetch("data.json")
       contrabajoContainer.appendChild(div);
     });
 
-    // FILTRAR INSTRUMENTOS POR LA BARRA DE BUSQUEDA
+    // FILTRAR INSTRUMENTOS POR LA BARRA DE BUSQUEDA (POR NOMBRE DE INSTRUMENTO Y MARCA)
 
     function filterResults(event) {
       event.preventDefault();
@@ -160,6 +159,7 @@ fetch("data.json")
 
       productCards.forEach((card) => {
         const instrumento = card.getAttribute("data-instrumento");
+        const marca = card.getAttribute("data-marca");
         const cardText = card.textContent.toLowerCase();
 
         if (instrumento === searchTerm || cardText.includes(searchTerm)) {
@@ -244,7 +244,6 @@ fetch("data.json")
     }
   });
 
-
 // ALMACENAR PRODUCTOS
 
 let carrito = [];
@@ -280,7 +279,8 @@ function actualizarCarrito() {
 
   carrito.forEach((producto, index) => {
     html += `
-    <li> <img id="imagen-carrito" src="${producto.imagen}" alt="Producto"> - ${producto.titulo} - Precio: ${producto.precio} <i class="fas fa-trash" onclick="eliminarDelCarrito(${index})"></i></li>
+    <li> <img id="imagen-carrito" src="${producto.imagen}" alt="Producto"> - ${producto.titulo} 
+    - Precio: ${producto.precio} <i class="fas fa-trash" onclick="eliminarDelCarrito(${index})"></i></li>
       `;
   });
 

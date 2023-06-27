@@ -14,7 +14,6 @@ header {
   display: flex;
   justify-content: center;
   height: 250px;
-  padding: 20px;
 
   .navbar{
     .container-fluid{
@@ -27,6 +26,7 @@ header {
   .imagen-logo {
     width: 150px;
     height: auto;
+    margin: 0 auto;
   }
   .iconoInicio {
     margin-left: 20px;
@@ -78,6 +78,7 @@ header {
   }
 }
 
+
 // Estilos Modal
 #carritoModal {
   display: none;
@@ -111,16 +112,25 @@ header {
       cursor: pointer;
     }
     h2 {
+      margin-top: 0;
       font-size: 20px;
+      font-family: "Quicksand", sans-serif;
+    }
+    ul#carrito-lista {
+      list-style-type: none;
+      padding: 0;
     }
     #total {
+      margin-top: 20px;
       font-weight: bold;
     }
     #btn-finalizar-compra {
       width: 150px;
+      font-family: "Quicksand", sans-serif;      
     }
     .btn-vaciar {
       width: 150px;
+      font-family: "Quicksand", sans-serif;
     }
   }
 }
