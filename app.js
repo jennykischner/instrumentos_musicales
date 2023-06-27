@@ -59,11 +59,13 @@ window.addEventListener("click", function (event) {
   }
 });
 
-// CARDS DE PRODUCTOS
+// CARDS DE PRODUCTOS MEDIANTE FETCH (OPERACION ASINCRONICA)
 
 fetch("data.json")
   .then((response) => response.json())
-  .then((data) => {
+  .then(async (data) => {
+    await operacionAsincronica(data);
+
     const violinContainer = document.getElementById("violin-container");
     const violaContainer = document.getElementById("viola-container");
     const violoncelloContainer = document.getElementById(
@@ -113,6 +115,15 @@ fetch("data.json")
       return div;
     };
 
+    async function operacionAsincronica() {
+      try {
+        const response = await fetch("data.json");
+        const data = await response.json();
+      } catch (error) {
+        console.log("Error en la operación asincrónica:", error);
+      }
+    }
+
     // CARDS DE VIOLIN
     data.tarjetasViolin.forEach((tarjeta) => {
       const div = createProductCard(tarjeta, agregarViolinAlCarrito);
@@ -158,7 +169,6 @@ fetch("data.json")
         }
       });
     }
-
 
     const form = document.querySelector("form");
     form.addEventListener("submit", filterResults);
@@ -232,11 +242,8 @@ fetch("data.json")
         agregarAlCarrito(producto);
       }
     }
-  })
-
-  .catch((error) => {
-    console.log("Error al cargar el archivo JSON:", error);
   });
+
 
 // ALMACENAR PRODUCTOS
 
@@ -273,7 +280,7 @@ function actualizarCarrito() {
 
   carrito.forEach((producto, index) => {
     html += `
-    <li>${producto.titulo} - Precio: ${producto.precio} <i class="fas fa-trash" onclick="eliminarDelCarrito(${index})"></i></li>
+    <li> <img id="imagen-carrito" src="${producto.imagen}" alt="Producto"> - ${producto.titulo} - Precio: ${producto.precio} <i class="fas fa-trash" onclick="eliminarDelCarrito(${index})"></i></li>
       `;
   });
 
@@ -301,8 +308,6 @@ function actualizarCantidadCarrito() {
 
 window.addEventListener("DOMContentLoaded", actualizarCantidadCarrito);
 
-
-
 // VACIAR EL CARRITO
 
 function vaciarCarrito() {
@@ -319,9 +324,9 @@ const btnFinalizarCompra = document.getElementById("btn-finalizar-compra");
 
 btnFinalizarCompra.addEventListener("click", finalizarCompra);
 
-obtenerCarritoGuardado()
+obtenerCarritoGuardado();
 
-//FORMULARIO DE COMPRA 
+//FORMULARIO DE COMPRA
 
 function finalizarCompra() {
   Swal.fire({
@@ -369,7 +374,9 @@ function finalizarCompra() {
     focusConfirm: false,
     preConfirm: () => {
       const nombreCompleto = document.getElementById("nombreCompleto").value;
-      const pagoTarjeta = document.getElementById("pagoTarjeta").checked ? "si" : "no";
+      const pagoTarjeta = document.getElementById("pagoTarjeta").checked
+        ? "si"
+        : "no";
       const tipoTarjeta = getSelectedTarjetas();
       const cuotas = document.getElementById("cuotas").value;
 
@@ -384,7 +391,6 @@ function finalizarCompra() {
 
       localStorage.setItem("resumenCompra", resumen);
 
-    
       Swal.fire({
         title: "Resumen de datos",
         html: resumen,
@@ -404,7 +410,7 @@ function finalizarCompra() {
           });
         }
       });
-    
+
       vaciarCarrito();
     },
     showCancelButton: true,
@@ -427,7 +433,9 @@ function toggleTipoTarjeta() {
   }
 }
 function getSelectedTarjetas() {
-  const checkboxes = document.querySelectorAll("#tipoTarjetaContainer input[type='checkbox']");
+  const checkboxes = document.querySelectorAll(
+    "#tipoTarjetaContainer input[type='checkbox']"
+  );
   const selectedTarjetas = [];
 
   checkboxes.forEach((checkbox) => {

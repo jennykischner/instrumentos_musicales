@@ -109,6 +109,11 @@ header:hover .carrito-container {
   width: 150px;
 }
 
+#imagen-carrito {
+  max-width: 100px;
+  height: auto;
+}
+
 #violin-container,
 #viola-container,
 #violoncello-container,
