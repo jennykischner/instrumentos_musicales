@@ -21,7 +21,7 @@
 - El carrito permite sumar varios productos actualizandose el precio junto a un botón de "finalizar compra" y de "vaciar el carrito" 
 - Al hacer click en el botón de "finalizar compra" aparece un formulario para completar. 
 - Todos los datos: Iniciar sesión del usuario, carrito de compras y formulario queda guardado en el local storage. 
-- 
+
 
  ⋆ Construido con:
    - ✔ HTML
