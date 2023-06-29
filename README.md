@@ -1,4 +1,4 @@
-<img src="../imagen_readme.jpeg">
+<img src="./img/imagen-readme.jpeg">
 
  ## ★ Proyecto: Instrumentos de Arco
  ####  Este proyecto forma parte del curso de JavaScript, dictado por Coderhouse.
