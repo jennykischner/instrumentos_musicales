@@ -15,7 +15,7 @@
 
 - **Al ingresar a la página muestra un listado de los instrumentos de arco en forma de *cards***.
 - **La página al ingresar muestra una barra de búsqueda que permite filtrar los instrumentos por nombre y marca**.
-- **Las cards muestran la información detallada del instrumento junto con el precio y un botón de añadir al carrito **.
+- **Las cards muestran la información detallada del instrumento junto con el precio y un botón de añadir al carrito**.
 - **Al cerrar la barra de búsqueda vuelven todos los productos como en la página principal**.
 - El proyecto cuenta con un carrito de compras.
 - El carrito permite sumar varios productos actualizandose el precio junto a un botón de "finalizar compra" y de "vaciar el carrito" 
