@@ -1,4 +1,4 @@
-<img src="./img/Imagen-Readme.jpeg">
+<img src="../imagen_readme.jpg.jpeg">
 
  ## ★ Proyecto: Instrumentos de Arco
  ####  Este proyecto forma parte del curso de JavaScript, dictado por Coderhouse.
@@ -9,16 +9,19 @@
  Website:  
 [Mira aquí mi página](https://jkinstrumentosmusicales.netlify.app/) 
 
+
 ### Funcionalidad:
 
 
-- **Al ingresar a la página muestra un listado de los instrumentos principales en forma de *cards***.
-- **La página al ingresar muetra una barra de busqueda que permite la busqueda de los instrumentos por nombre y marca**.
-- **La página muestra la información detallada de un recurso (al clickear sobre el mismo)**.
-- **La busqueda desaparece y solo se ven los detalles del recurso clickeado y un botón que permite regresar a la página principal**.
-- El proyecto muestra 20 resultados por página.
-- El proyecto cuenta con un paginado que permite ir a la página siguiente y a la página anterior con facilidad.
-- Los botones se deshabilitan cuando no puedan ser utilizados.
+- **Al ingresar a la página muestra un listado de los instrumentos de arco en forma de *cards***.
+- **La página al ingresar muestra una barra de búsqueda que permite filtrar los instrumentos por nombre y marca**.
+- **Las cards muestran la información detallada del instrumento junto con el precio y un botón de añadir al carrito **.
+- **Al cerrar la barra de búsqueda vuelven todos los productos como en la página principal**.
+- El proyecto cuenta con un carrito de compras.
+- El carrito permite sumar varios productos actualizandose el precio junto a un botón de "finalizar compra" y de "vaciar el carrito" 
+- Al hacer click en el botón de "finalizar compra" aparece un formulario para completar. 
+- Todos los datos: Iniciar sesión del usuario, carrito de compras y formulario queda guardado en el local storage. 
+- 
 
  ⋆ Construido con:
    - ✔ HTML
@@ -29,7 +32,6 @@
 
  ⋆ Recursos:
    - ✔  Fuente: https://fonts.google.com/
-   - 🎨 Paleta de Colores: https://coolors.co/ 
    - 📷 Imagenes: La imagenes utilizadas en esta página se descargaron principalmente de: www.google.com
 
 
